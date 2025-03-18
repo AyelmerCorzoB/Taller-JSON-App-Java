@@ -1,10 +1,10 @@
-package com.taller.application.ui;
+package com.taller.application.ui.filtros;
 
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import com.taller.domain.entity.Team;
-import com.taller.domain.filtros.Consumers;
 import com.taller.domain.filtros.Predicator;
 
 public class Filtrar {
@@ -17,10 +17,13 @@ public class Filtrar {
             .collect(Collectors.toList());
     }
 
-    // public List<Team> entrenadores(List<Team> equipos) {
-    //     Consumers consumers = new Consumers();
+    public void entrenadores(List<Team> equipos) {
+        // Definir el Consumer que imprime el nombre del entrenador
+        Consumer<Team> imprimirEntrenador = team -> {
+            System.out.println(" Equipo: " + team.getName() + " - Entrenador: " + team.getCoach());
+        };
 
-    //     return equipos.stream()
-    //         .filter(coach -> consumers.)
-    // }
+        // Aplicar el Consumer a cada equipo en la lista
+        equipos.forEach(imprimirEntrenador);
+    }
 }
