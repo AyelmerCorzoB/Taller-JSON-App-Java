@@ -47,8 +47,7 @@ public class Filtrar {
                 .mapToInt(Players::getAge)
                 .average()
                 .orElse(0.0);
-        // Este String es para formatear el resultado y que no salga 33.3333333333 y mas
-        // que solo imprima 33.3
+
         String promedioFormateado = String.format("%.1f", promedio);
 
         System.out.println("Equipo: " + team.getName() + " - Promedio de edad de los jugadores: " + promedioFormateado);
@@ -56,18 +55,17 @@ public class Filtrar {
 
     public void jugadorMasAlto(List<Team> equipos) {
         Consumer<Team> encontrarJugadorMasAlto = team -> {
-            // Verificar si el equipo tiene jugadores
+
             if (team.getPlayers() != null && !team.getPlayers().isEmpty()) {
-                // Usar Stream para encontrar al jugador más alto
+
                 Players jugadorMasAlto = team.getPlayers().stream()
-                        .max((p1, p2) -> Double.compare(p1.getHeight(), p2.getHeight())) // Comparar alturas
-                        .orElse(null); // Si no hay jugadores, devolver null
-    
-                // Mostrar el resultado
+                        .max((p1, p2) -> Double.compare(p1.getHeight(), p2.getHeight()))
+                        .orElse(null);
+
                 if (jugadorMasAlto != null) {
-                    System.out.println("=================================="+"\nEquipo: " + team.getName() + 
-                                       " - Jugador más alto: " + jugadorMasAlto.getName() + 
-                                       " - Altura: " + jugadorMasAlto.getHeight()+ "\n==================================");
+                    System.out.println("==================================" + "\nEquipo: " + team.getName() +
+                            " - Jugador más alto: " + jugadorMasAlto.getName() +
+                            " - Altura: " + jugadorMasAlto.getHeight() + "\n==================================");
                 } else {
                     System.out.println("Equipo: " + team.getName() + " - No tiene jugadores registrados.");
                 }
@@ -75,8 +73,31 @@ public class Filtrar {
                 System.out.println("Equipo: " + team.getName() + " - No tiene jugadores registrados.");
             }
         };
-    
-        // Aplicar la lógica a cada equipo
+
         equipos.forEach(encontrarJugadorMasAlto);
+    }
+
+    public void sumarGolesAFavor(List<Team> equipos) {
+        Consumer<Team> calcularGoles = team -> {
+
+            if (team.getStatistics() != null && !team.getStatistics().isEmpty()) {
+
+                int totalGoles = team.getStatistics().stream()
+                        .mapToInt(estadistica -> {
+                            try {
+                                return Integer.parseInt(estadistica.getGf());
+                            } catch (NumberFormatException e) {
+                                return 0;
+                            }
+                        })
+                        .sum();
+
+                System.out.println("=========================="+"\nEquipo: " + team.getName() + " - Total de goles a favor: " + totalGoles +"\n==========================");
+            } else {
+                System.out.println("Equipo: " + team.getName() + " - No tiene estadísticas registradas.");
+            }
+        };
+
+        equipos.forEach(calcularGoles);
     }
 }

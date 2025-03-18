@@ -80,15 +80,16 @@ public class Main {
                         filtrar.jugadorMasAlto(servicio.obtenerTodosLosEquipos());
                         break;
                     case 7:
-                        System.out.println("Calculo de total de goles por equipo");
+                        System.out.println("✅ Sumar goles a favor por equipo:");
+                        filtrar.sumarGolesAFavor(servicio.obtenerTodosLosEquipos());
                         break;
                     case 8:
                         System.out.println("Saliendo....");
                         break;
-                        default:
+                    default:
                         System.out.println("Opción inválida. Vuelva a intentarlo.");
                         break;
-                    
+
                 }
             } while (opcionMenu != 8);
         } catch (Exception e) {
