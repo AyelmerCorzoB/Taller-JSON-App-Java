@@ -16,7 +16,7 @@ public class FiltrosRetos {
                             team.getStatistics().stream()
                                     .anyMatch(estadistica -> {
                                         try {
-                                            int tp = Integer.parseInt(estadistica.getTp());
+                                            int tp = (estadistica.getTp());
                                             return predicator.test3(tp);
                                         } catch (NumberFormatException e) {
                                             return false;

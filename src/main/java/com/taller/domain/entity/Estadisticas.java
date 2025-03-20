@@ -1,20 +1,20 @@
 package com.taller.domain.entity;
 
 public class Estadisticas {
-    private String pj;
-    private String pg;
-    private String pe;
-    private String pp;
-    private String gf;
-    private String gc;
-    private String tp;
+    private int pj;
+    private int pg;
+    private int pe;
+    private int pp;
+    private int gf;
+    private int gc;
+    private int tp;
 
     // Constructor sin argumentos
     public Estadisticas() {
     }
 
     // Constructor con argumentos
-    public Estadisticas(String pj, String pg, String pe, String pp, String gf, String gc, String tp) {
+    public Estadisticas(int pj, int pg, int pe, int pp, int gf, int gc, int tp) {
         this.pj = pj;
         this.pg = pg;
         this.pe = pe;
@@ -25,59 +25,59 @@ public class Estadisticas {
     }
 
     // Getters y setters
-    public String getPj() {
+    public int getPj() {
         return pj;
     }
 
-    public void setPj(String pj) {
+    public void setPj(int pj) {
         this.pj = pj;
     }
 
-    public String getPg() {
+    public int getPg() {
         return pg;
     }
 
-    public void setPg(String pg) {
+    public void setPg(int pg) {
         this.pg = pg;
     }
 
-    public String getPe() {
+    public int getPe() {
         return pe;
     }
 
-    public void setPe(String pe) {
+    public void setPe(int pe) {
         this.pe = pe;
     }
 
-    public String getPp() {
+    public int getPp() {
         return pp;
     }
 
-    public void setPp(String pp) {
+    public void setPp(int pp) {
         this.pp = pp;
     }
 
-    public String getGf() {
+    public int getGf() {
         return gf;
     }
 
-    public void setGf(String gf) {
+    public void setGf(int gf) {
         this.gf = gf;
     }
 
-    public String getGc() {
+    public int getGc() {
         return gc;
     }
 
-    public void setGc(String gc) {
+    public void setGc(int gc) {
         this.gc = gc;
     }
 
-    public String getTp() {
+    public int getTp() {
         return tp;
     }
 
-    public void setTp(String tp) {
+    public void setTp(int tp) {
         this.tp = tp;
     }
 

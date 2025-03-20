@@ -32,7 +32,7 @@ public class Filtrar {
                             team.getStatistics().stream()
                                     .anyMatch(estadistica -> {
                                         try {
-                                            int pg = Integer.parseInt(estadistica.getPg());
+                                            int pg = (estadistica.getPg());
                                             return predicator.test2(pg);
                                         } catch (NumberFormatException e) {
                                             return false;
@@ -85,7 +85,7 @@ public class Filtrar {
                 int totalGoles = team.getStatistics().stream()
                         .mapToInt(estadistica -> {
                             try {
-                                return Integer.parseInt(estadistica.getGf());
+                                return (estadistica.getGf());
                             } catch (NumberFormatException e) {
                                 return 0;
                             }
