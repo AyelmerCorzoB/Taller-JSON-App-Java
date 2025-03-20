@@ -9,7 +9,7 @@ Este proyecto es un taller práctico que utiliza expresiones lambda y la API Str
 🚀 Configuración del Proyecto
 - Clona este repositorio en tu máquina local:
 ````bash
-git clone https://github.com/tu-usuario/uefa-data-taller.git
+git clone https://github.com/AyelmerCorzoB/Taller-UEFA-Expresiones-Lambda-y-Stream_Api.git
 ````
 - Abre el proyecto en tu IDE favorito.
 Asegúrate de tener las dependencias necesarias en tu archivo pom.xml (si usas Maven).
