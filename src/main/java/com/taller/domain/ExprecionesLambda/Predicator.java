@@ -12,4 +12,7 @@ public class Predicator implements Predicate<Integer> {
     public boolean test2(Integer pg){
         return pg > 20; 
     }
+    public boolean test3(Integer tp){
+        return tp > 20; 
+    }
 }

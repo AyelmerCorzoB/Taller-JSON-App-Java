@@ -1,12 +1,12 @@
 package com.taller.application.ui.menus;
 
-public class MenuPrincipal {
+public class MenuRetos {
     public static void mostrarMenu() {
         System.out.println("======================================");
         System.out.println("          MENÚ PRINCIPAL               ");
         System.out.println("======================================");
-        System.out.println("1. Ejercicios del punto 'A' al punto 'F'");
-        System.out.println("2. Retos adicionales");
+        System.out.println("1. Listar equipos con más de 15 puntos en la fase de liga");
+        System.out.println("2. Obtener el promedio de goles a favor por equipo");
         System.out.print("Seleccione una opción: ");
     }
 }
